@@ -45,5 +45,23 @@ describe("handleBridgeRequest", () => {
 
     expect(eventResponse.status).toBe(202);
     expect(bridge.getRecentEvents()).toHaveLength(1);
+
+    const readContext = await handleBridgeRequest({
+      method: "GET",
+      path: "/tableau/context",
+      body: "",
+      bridge,
+    });
+
+    expect(readContext.status).toBe(200);
+    expect(readContext.json).toEqual({
+      ok: true,
+      context: {
+        dashboardName: "Ventas Ecuador",
+        worksheets: [{ name: "Ventas por región" }],
+        filters: [{ fieldName: "Región", values: ["Costa"] }],
+        parameters: [{ name: "Año", value: 2026 }],
+      },
+    });
   });
 });

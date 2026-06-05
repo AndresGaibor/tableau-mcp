@@ -42,6 +42,26 @@ export async function handleBridgeRequest(request: BridgeRequest): Promise<Bridg
     };
   }
 
+  if (request.method === "GET" && request.path === "/tableau/context") {
+    return {
+      status: 200,
+      json: {
+        ok: true,
+        context: request.bridge.getLiveContext(),
+      },
+    };
+  }
+
+  if (request.method === "GET" && request.path === "/tableau/events") {
+    return {
+      status: 200,
+      json: {
+        ok: true,
+        events: request.bridge.getRecentEvents(),
+      },
+    };
+  }
+
   if (request.method === "POST" && request.path === "/tableau/action-result") {
     return {
       status: 202,

@@ -6,7 +6,7 @@
     "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
-    "types": ["bun-types"],
+    "types": ["bun-types", "vite/client"],
     "baseUrl": "."
   },
   "include": ["src"]
