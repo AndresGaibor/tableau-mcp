@@ -1,0 +1,27 @@
+{
+  "name": "tableau-desktop-mcp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "bunx tsc --noEmit",
+    "start": "bun run scripts/start.ts",
+    "start:server": "bun run src/index.ts"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "@types/bun": "latest",
+    "@cfworker/json-schema": "^4.1.1",
+    "@modelcontextprotocol/node": "^2.0.0-alpha.2",
+    "@modelcontextprotocol/server": "^2.0.0-alpha.2",
+    "@vitejs/plugin-react": "^5.1.4",
+    "ajv": "^8.17.1",
+    "json-schema-typed": "^7.0.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "vite": "^7.2.4",
+    "zod": "^4.4.3",
+    "typescript": "^5.8.3"
+  }
+}

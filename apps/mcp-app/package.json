@@ -1,0 +1,10 @@
+{
+  "name": "@tableau-mcp/mcp-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "bunx tsc --noEmit -p tsconfig.json"
+  }
+}
